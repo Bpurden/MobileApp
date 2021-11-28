@@ -10,6 +10,7 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +32,7 @@ import java.util.List;
 
 
 public class Tester extends AppCompatActivity {
-
+    TextView display;
     TextInputEditText sesid;
     Button ses_button;
 
@@ -39,57 +40,26 @@ public class Tester extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tester);
-
-        sesid = findViewById(R.id.ses_id);
-        ses_button = findViewById(R.id.ses_button);
-
-        ses_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(TextUtils.isEmpty(sesid.getText().toString())){
-                    Toast.makeText(Tester.this, "Please Enter all Required Fields", Toast.LENGTH_LONG).show();
-                }else{
-                    SesionID();
-                }
+        if(getIntent().getExtras() != null) {
+            String[] array = getIntent().getStringArrayExtra("key");
+            int arraySize = array.length;
+            String save = array[2];
+            if(save != null) {
+                TextView t = (TextView) findViewById(R.id.display);
+                t.setText("" + array[0]);
             }
-        });
-
+            String save1 = array[15];
+            if(save1 != null) {
+                TextView t = (TextView) findViewById(R.id.display);
+                t.setText("" + array[15]);
+            }
+        }
     }
 
-    private void SesionID() {
-        HistoryRequest historyRequest = new HistoryRequest();
-        historyRequest.setSid(sesid.getText().toString());
-        ArrayList<String> stupid = new ArrayList<String>();
 
-
-        Call<HistoryResponse> historyResponseCall = ApiClient.getUserService().statusHistory(historyRequest);
-        historyResponseCall.enqueue(new Callback<HistoryResponse>() {
-            @Override
-            public void onResponse(Call<HistoryResponse> call, Response<HistoryResponse> response) {
-                if(response.isSuccessful()){
-                    Toast.makeText(Tester.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                    HistoryResponse historyResponse = response.body();
-
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            startActivity(new Intent(Tester.this,BottomNavbar.class).putExtra( "data",historyResponse.getError()));
-
-                        }
-                    },  700);
-                }
-                else{
-                    Toast.makeText(Tester.this, "Registration Failed", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<HistoryResponse> call, Throwable t) {
-                Toast.makeText(Tester.this, "Throwable"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
 
 }
+
+
+

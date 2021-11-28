@@ -9,6 +9,15 @@ public class Services {
     private Boolean status;
     private Integer upCount;
     private Integer downCount;
+    public ArrayList<History> history = new ArrayList<History>();
+
+    public ArrayList<History> getHistory() {
+        return history;
+    }
+
+    public void setHistory(ArrayList<History> history) {
+        this.history = history;
+    }
 
     public Integer getUpCount() {
         return upCount;

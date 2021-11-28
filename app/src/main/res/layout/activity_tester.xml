@@ -9,43 +9,12 @@
     android:orientation="vertical"
     tools:context=".Tester">
 
+
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
-        android:layout_marginStart="80dp"
-        android:text="Enter Session Id"
-        android:textColor="@color/white"
-        android:textSize="24sp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="30dp"
-        android:hint="SID"
-        android:textColorHint="@color/white"
-        android:layout_marginEnd="30dp">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:inputType="textEmailAddress"
-            android:background="#11000000"
-            android:drawableStart="@drawable/ic_action_username"
-            android:id="@+id/ses_id"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/ses_button"
-        android:layout_width="250dp"
-        android:layout_height="55dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="#F04E9F"
-        android:text="Enter"
-        android:textAllCaps="false"
-        android:textSize="16sp" />
-
+        android:id="@+id/display"
+        android:text="display"
+        android:textSize="24sp"
+        />
 </LinearLayout>

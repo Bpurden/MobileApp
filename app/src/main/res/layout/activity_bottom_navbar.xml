@@ -54,6 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:gravity="center_horizontal"
+                    android:id="@+id/first"
                     android:padding="30sp"
                     android:text="@string/blog"
                     android:textSize="14sp" />
@@ -79,6 +80,7 @@
                     android:gravity="center_horizontal"
                     android:padding="30sp"
                     android:text="@string/demo"
+                    android:id="@+id/second"
                     android:textSize="14sp" />
 
                 <ImageView
@@ -101,6 +103,7 @@
                     android:layout_weight="2"
                     android:gravity="center_horizontal"
                     android:padding="30sp"
+                    android:id="@+id/third"
                     android:text="@string/DNS"
                     android:textSize="15sp" />
 
@@ -124,6 +127,7 @@
                     android:layout_weight="2"
                     android:gravity="center_horizontal"
                     android:padding="30sp"
+                    android:id="@+id/fourth"
                     android:text="@string/Dolibar"
                     android:textSize="15sp" />
 
@@ -148,6 +152,7 @@
                     android:gravity="center_horizontal"
                     android:padding="30sp"
                     android:text="@string/FTP"
+                    android:id="@+id/fifth"
                     android:textSize="15sp" />
 
                 <ImageView
@@ -170,6 +175,7 @@
                     android:layout_weight="2"
                     android:gravity="center_horizontal"
                     android:padding="30sp"
+                    android:id="@+id/six"
                     android:text="@string/FTP"
                     android:textSize="15sp" />
 
@@ -185,50 +191,6 @@
 
             </TableRow>
 
-            <TableRow>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:gravity="center_horizontal"
-                    android:padding="30sp"
-                    android:text="@string/FTP"
-                    android:textSize="15sp" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:gravity="center_horizontal"
-                    android:padding="30sp"
-                    android:src="@drawable/ic_check"
-                    android:textSize="12sp" />
-
-
-            </TableRow>
-            <TableRow>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:gravity="center_horizontal"
-                    android:padding="30sp"
-                    android:text="@string/FTP"
-                    android:textSize="15sp" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:gravity="center_horizontal"
-                    android:padding="30sp"
-                    android:src="@drawable/ic_check"
-                    android:textSize="12sp" />
-
-
-            </TableRow>
 
 
         </TableLayout>

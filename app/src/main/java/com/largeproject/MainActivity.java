@@ -13,6 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -74,36 +77,76 @@ public class MainActivity extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            HistoryRequest historyRequest = new HistoryRequest();
-                            historyRequest.setSid("69");
-
-                            Call<HistoryResponse> historyResponseCall = ApiClient.getUserService().statusHistory(historyRequest);
-                            historyResponseCall.enqueue(new Callback<HistoryResponse>() {
-                                @Override
-                                public void onResponse(Call<HistoryResponse> call, Response<HistoryResponse> response) {
-                                    if(response.isSuccessful()){
-                                        Toast.makeText(MainActivity.this, "it worked", Toast.LENGTH_SHORT).show();
-                                        HistoryResponse historyResponse = response.body();
+                                HistoryRequest historyRequest = new HistoryRequest();
+                                historyRequest.setSid(loginResponse.getSid());
+                                String[] strArray = new String[100];
+                                String[] service = new String[100];
+                                String[] history = new String[100];
+                                Boolean[] array = new Boolean[10000];
 
 
-                                        new Handler().postDelayed(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                startActivity(new Intent(MainActivity.this,BottomNavbar.class));
-                                            }
-                                        },  700);
+                            int arrayLength = strArray.length;
+
+                                Call<HistoryResponse> historyResponseCall = ApiClient.getUserService().statusHistory(historyRequest);
+                                historyResponseCall.enqueue(new Callback<HistoryResponse>() {
+                                    @Override
+                                    public void onResponse(Call<HistoryResponse> call, Response<HistoryResponse> response) {
+                                        if (response.isSuccessful()) {
+                                            HistoryResponse historyResponse = response.body();
+
+                                            new Handler().postDelayed(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    int currArrayIndex = 0;
+                                                    int currArrayHist = 0;
+                                                    ArrayList<Teams> tms = new ArrayList<Teams>(historyResponse.getTeams());
+                                                    for(int i = 0; i < tms.size(); i++)
+                                                    {
+                                                        Teams t = tms.get(i);
+
+
+                                                    }
+                                                    for (Teams t : tms) {
+                                                        for (int i=0; i<t.getMachines().size(); i++) {
+                                                            Machines m = t.getMachines().get(i);
+                                                            System.out.println("\t\tName:" + m.getName());
+                                                            service[i] = m.getName();
+
+                                                            for (int k =0; k<m.getServices().size(); k++, currArrayIndex++) {
+                                                                Services s = m.getServices().get(k);
+                                                                System.out.println("Assigning "+s.getName() + " to index of "+currArrayIndex);
+                                                                strArray[currArrayIndex] = s.getName();
+
+                                                                for(int l=0; l<s.getHistory().size(); l++, currArrayHist++)
+                                                                {
+                                                                    History h = s.getHistory().get(l);
+                                                                    System.out.println("time "+h.getTimestamp() + " boolean "+h.getStatus());
+                                                                    history[currArrayHist] = h.getTimestamp();
+                                                                    array[currArrayHist] = h.getStatus();
+                                                                }
+                                                            }
+
+                                                        }
+                                                    }
+                                                    Intent i=new Intent(MainActivity.this,BottomNavbar.class);
+                                                    i.putExtra("key",service);
+                                                    i.putExtra("key2", strArray);
+                                                    startActivity(i);
+                                                }
+                                            }, 700);
+                                        } else {
+                                            Toast.makeText(MainActivity.this, "didn't work", Toast.LENGTH_SHORT).show();
+                                        }
+
                                     }
-                                    else{
-                                        Toast.makeText(MainActivity.this, "didnt work", Toast.LENGTH_SHORT).show();
+
+                                    @Override
+                                    public void onFailure(Call<HistoryResponse> call, Throwable t) {
+                                        Toast.makeText(MainActivity.this, "Throwable" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                                     }
+                                });
 
-                                }
 
-                                @Override
-                                public void onFailure(Call<HistoryResponse> call, Throwable t) {
-                                    Toast.makeText(MainActivity.this, "Throwable"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                                }
-                            });
                         }
                     },100);
                 }
