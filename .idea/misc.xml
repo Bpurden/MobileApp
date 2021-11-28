@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/drawable-anydpi/ic_action_password.xml" value="0.346875" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/drawable-anydpi/ic_action_username.xml" value="0.5703125" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/drawable/button_color.xml" value="0.5703125" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/drawable/ic_check.xml" value="0.5703125" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/drawable/ic_home.xml" value="0.42604166666666665" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/drawable/ic_redx.xml" value="0.5703125" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/drawable/selector.xml" value="0.42604166666666665" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout-v21/activity_2.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout-v21/activity_main.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_2.xml" value="0.33" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_3.xml" value="0.40989583333333335" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_add_instance.xml" value="0.40989583333333335" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_add_instance_comp.xml" value="0.40989583333333335" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_bottom_navbar.xml" value="0.40989583333333335" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_home.xml" value="0.40989583333333335" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_logout.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_main4.xml" value="0.40989583333333335" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_recent_checks.xml" value="0.40989583333333335" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_registration_page2.xml" value="0.32708333333333334" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_service_status.xml" value="0.40989583333333335" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/activity_tester.xml" value="0.40989583333333335" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/addinstance.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/fragement_home.xml" value="0.33" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/fragment_Score.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/fragment_score.xml" value="0.421875" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/fragment_totalsuccess.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/fragment_uptime.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/layout/nav_header.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/menu/drawer_menu.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Blake/Desktop/Website Class/Large Project/app/src/main/res/menu/menu_navigation.xml" value="0.40989583333333335" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

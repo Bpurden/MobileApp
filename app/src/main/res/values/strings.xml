@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Large Project</string>
+    <string name="recent">Last Checked Time </string>
+    <string name="service">Services </string>
+    <string name="blog">BLOG-http </string>
+    <string name="demo">DEMO-http </string>
+    <string name="DNS">DNS-dns </string>
+    <string name="Dolibar">Dolibar-http </string>
+    <string name="FTP">FTP_104-ftp </string>
+    <string name="status">Status </string>
+    <string name="current">Current </string>
+    <string name="time">-2min </string>
+    <string name="time2">-4min </string>
+    <string name="time3">-6min </string>
+    <string name="time4">-8min </string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>
