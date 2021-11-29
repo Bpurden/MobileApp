@@ -15,4 +15,12 @@
     <string name="time4">-8min </string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string-array name="Spinner_items">
+        <item> First Service</item>
+        <item> Second Service</item>
+        <item> Third Service</item>
+        <item> Fourth Service</item>
+        <item> Fifth Service</item>
+        <item> Sixth Service</item>
+    </string-array>
 </resources>

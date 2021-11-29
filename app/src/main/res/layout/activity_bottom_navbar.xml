@@ -65,6 +65,7 @@
                     android:layout_weight="2"
                     android:gravity="center_horizontal"
                     android:padding="30sp"
+                    android:id="@+id/firstpic"
                     android:src="@drawable/ic_redx"
                     android:textSize="12sp" />
 
@@ -89,6 +90,7 @@
                     android:layout_weight="2"
                     android:gravity="center_horizontal"
                     android:padding="30sp"
+                    android:id="@+id/secondpic"
                     android:src="@drawable/ic_check"
                     android:textSize="12sp" />
 
@@ -113,6 +115,7 @@
                     android:layout_weight="2"
                     android:gravity="center_horizontal"
                     android:padding="30sp"
+                    android:id="@+id/thirdpic"
                     android:src="@drawable/ic_redx"
                     android:textSize="12sp" />
 
@@ -137,6 +140,7 @@
                     android:layout_weight="2"
                     android:gravity="center_horizontal"
                     android:padding="30sp"
+                    android:id="@+id/fourthpic"
                     android:src="@drawable/ic_check"
                     android:textSize="12sp" />
 
@@ -161,6 +165,7 @@
                     android:layout_weight="2"
                     android:gravity="center_horizontal"
                     android:padding="30sp"
+                    android:id="@+id/fifthpic"
                     android:src="@drawable/ic_check"
                     android:textSize="12sp" />
 
@@ -185,12 +190,12 @@
                     android:layout_weight="2"
                     android:gravity="center_horizontal"
                     android:padding="30sp"
+                    android:id="@+id/sixpic"
                     android:src="@drawable/ic_check"
                     android:textSize="12sp" />
 
 
             </TableRow>
-
 
 
         </TableLayout>

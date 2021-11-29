@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -29,6 +30,7 @@ import retrofit2.Response;
 
 public class BottomNavbar extends AppCompatActivity {
     private TextView myText = null;
+    public boolean [] checksDataIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,17 @@ public class BottomNavbar extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
                 switch (menuitem.getItemId()) {
                     case R.id.recent_checks:
-                        startActivity(new Intent(getApplicationContext(), RecentChecks.class));
+                        String[] timestamp = getIntent().getStringArrayExtra("timestamp");
+                        Bundle myBundle = getIntent().getExtras();
+                        int[] oneorzero = myBundle.getIntArray("intarray");
+                        String[] array2 = getIntent().getStringArrayExtra("key2");
+                        String[] array = getIntent().getStringArrayExtra("key");
+                        Intent i=new Intent(BottomNavbar.this,RecentChecks.class);
+                        i.putExtra("timestamp", timestamp);
+                        i.putExtra("status", oneorzero);
+                        i.putExtra("name", array2);
+                        i.putExtra("key", array);
+                        startActivity(i);
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.status:
@@ -58,7 +70,10 @@ public class BottomNavbar extends AppCompatActivity {
         if(getIntent().getExtras() != null) {
             String[] array = getIntent().getStringArrayExtra("key");
             String[] array2 = getIntent().getStringArrayExtra("key2");
-            int arraySize = array.length;
+            String[] timestamp = getIntent().getStringArrayExtra("timestamp");
+            Bundle myBundle = getIntent().getExtras();
+            int[] oneorzero = myBundle.getIntArray("intarray");
+            int[] nutsack = myBundle.getIntArray("intstatus");
             String save = array[0];
             String me = array2[0];
             if(save != null) {
@@ -95,13 +110,66 @@ public class BottomNavbar extends AppCompatActivity {
                 TextView t = (TextView) findViewById(R.id.six);
                 t.setText("" + save5 + " " + me5);
             }
+            if(nutsack[0] == 1) {
+                ImageView mainImage = (ImageView) findViewById(R.id.firstpic);
+                mainImage.setImageResource(R.drawable.ic_check);
+            }
+            else
+            {
+                ImageView mainImage = (ImageView) findViewById(R.id.firstpic);
+                mainImage.setImageResource(R.drawable.ic_redx);
+            }
 
-
-
+            if(nutsack[1] == 1) {
+                ImageView mainImage = (ImageView) findViewById(R.id.secondpic);
+                mainImage.setImageResource(R.drawable.ic_check);
+            }
+            else
+            {
+                ImageView mainImage = (ImageView) findViewById(R.id.secondpic);
+                mainImage.setImageResource(R.drawable.ic_redx);
+            }
+            if(nutsack[2] == 1) {
+                ImageView mainImage = (ImageView) findViewById(R.id.thirdpic);
+                mainImage.setImageResource(R.drawable.ic_check);
+            }
+            else
+            {
+                ImageView mainImage = (ImageView) findViewById(R.id.thirdpic);
+                mainImage.setImageResource(R.drawable.ic_redx);
+            }
+            if(nutsack[3] == 1) {
+                ImageView mainImage = (ImageView) findViewById(R.id.fourthpic);
+                mainImage.setImageResource(R.drawable.ic_check);
+            }
+            else
+            {
+                ImageView mainImage = (ImageView) findViewById(R.id.fourthpic);
+                mainImage.setImageResource(R.drawable.ic_redx);
+            }
+            if(nutsack[4] == 1) {
+                ImageView mainImage = (ImageView) findViewById(R.id.fifthpic);
+                mainImage.setImageResource(R.drawable.ic_check);
+            }
+            else
+            {
+                ImageView mainImage = (ImageView) findViewById(R.id.fifthpic);
+                mainImage.setImageResource(R.drawable.ic_redx);
+            }
+            if(nutsack[5] == 1) {
+                ImageView mainImage = (ImageView) findViewById(R.id.sixpic);
+                mainImage.setImageResource(R.drawable.ic_check);
+            }
+            else
+            {
+                ImageView mainImage = (ImageView) findViewById(R.id.sixpic);
+                mainImage.setImageResource(R.drawable.ic_redx);
+            }
 
         }
 
-        }
+
+    }
 
     }
 

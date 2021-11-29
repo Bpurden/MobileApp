@@ -13,6 +13,24 @@
         android:theme="@style/Theme.LargeProject"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Case6"
+            android:exported="false" />
+        <activity
+            android:name=".Case5"
+            android:exported="false" />
+        <activity
+            android:name=".Case4"
+            android:exported="false" />
+        <activity
+            android:name=".Case3"
+            android:exported="false" />
+        <activity
+            android:name=".Case2"
+            android:exported="false" />
+        <activity
+            android:name=".Case1"
+            android:exported="false" />
+        <activity
             android:name=".Logout"
             android:exported="false" />
         <activity

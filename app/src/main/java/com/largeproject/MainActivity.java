@@ -47,16 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-        Button registration = findViewById(R.id.regnow_button);
-        registration.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                openRegister();
-            }
-        });
-
     }
 
 
@@ -81,12 +71,12 @@ public class MainActivity extends AppCompatActivity {
                                 historyRequest.setSid(loginResponse.getSid());
                                 String[] strArray = new String[100];
                                 String[] service = new String[100];
-                                String[] history = new String[100];
-                                Boolean[] array = new Boolean[10000];
-
-
-                            int arrayLength = strArray.length;
-
+                                String[] history = new String[10000];
+                                boolean[] checksDataOut = new boolean[1000];
+                                boolean[] status = new boolean[1000];
+                                int arrayLength = strArray.length;
+                                int[] holder = new int[100];
+                                int[] nuts = new int[100];
                                 Call<HistoryResponse> historyResponseCall = ApiClient.getUserService().statusHistory(historyRequest);
                                 historyResponseCall.enqueue(new Callback<HistoryResponse>() {
                                     @Override
@@ -103,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
                                                     for(int i = 0; i < tms.size(); i++)
                                                     {
                                                         Teams t = tms.get(i);
-
-
                                                     }
                                                     for (Teams t : tms) {
                                                         for (int i=0; i<t.getMachines().size(); i++) {
@@ -116,21 +104,49 @@ public class MainActivity extends AppCompatActivity {
                                                                 Services s = m.getServices().get(k);
                                                                 System.out.println("Assigning "+s.getName() + " to index of "+currArrayIndex);
                                                                 strArray[currArrayIndex] = s.getName();
+                                                                status[currArrayIndex] = s.getStatus();
 
                                                                 for(int l=0; l<s.getHistory().size(); l++, currArrayHist++)
                                                                 {
                                                                     History h = s.getHistory().get(l);
                                                                     System.out.println("time "+h.getTimestamp() + " boolean "+h.getStatus());
                                                                     history[currArrayHist] = h.getTimestamp();
-                                                                    array[currArrayHist] = h.getStatus();
+                                                                    checksDataOut[currArrayHist] = h.getStatus();
+                                                                    System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaa " + checksDataOut[currArrayHist]);
+
+
                                                                 }
                                                             }
-
                                                         }
                                                     }
+
+                                                    for(int i=0; i<currArrayHist; i++) {
+                                                        if(checksDataOut[i] == true)
+                                                            holder[i] = 1;
+                                                        else
+                                                            holder[i] = 0;
+
+                                                    }
+                                                    for(int i=0; i<currArrayIndex; i++) {
+                                                        if(status[i] == true)
+                                                            nuts[i] = 1;
+                                                        else
+                                                            nuts[i] = 0;
+
+                                                    }
+
+                                                    for(int i=0; i<currArrayHist; i++) {
+                                                        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaa " + holder[i]);
+
+                                                    }
+
+                                                        Bundle extrasOut = new Bundle();
                                                     Intent i=new Intent(MainActivity.this,BottomNavbar.class);
                                                     i.putExtra("key",service);
                                                     i.putExtra("key2", strArray);
+                                                    i.putExtra("timestamp", history);
+                                                    i.putExtra("intarray", holder);
+                                                    i.putExtra("intstatus", nuts);
                                                     startActivity(i);
                                                 }
                                             }, 700);

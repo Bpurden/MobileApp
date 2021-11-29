@@ -20,12 +20,12 @@ import com.google.android.material.navigation.NavigationBarView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecentChecks extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class Case2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recent_checks);
-
+        setContentView(R.layout.activity_case2);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -39,7 +39,15 @@ public class RecentChecks extends AppCompatActivity implements AdapterView.OnIte
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(), BottomNavbar.class));
+                        String[] array2 = getIntent().getStringArrayExtra("name");
+                        String[] buttcheeks = getIntent().getStringArrayExtra("timestamp");
+                        Bundle myBundle = getIntent().getExtras();
+                        int[] oneorzero = myBundle.getIntArray("status");
+                        Intent i=new Intent(Case2.this,BottomNavbar.class);
+                        i.putExtra("timestamp", buttcheeks);
+                        i.putExtra("status", oneorzero);
+                        i.putExtra("name", array2);
+                        startActivity(i);
                         overridePendingTransition(0, 0);
                         return true;
 
@@ -69,7 +77,7 @@ public class RecentChecks extends AppCompatActivity implements AdapterView.OnIte
         spin.setAdapter(aa);
 
 
-        String saveme = array2[0];
+        String saveme = array2[2];
         if (saveme != null) {
             TextView t = (TextView) findViewById(R.id.display);
             t.setText("" + saveme);
@@ -164,42 +172,42 @@ public class RecentChecks extends AppCompatActivity implements AdapterView.OnIte
         String text = parent.getItemAtPosition(position).toString();
         switch (position){
             case 1:
-                Intent i=new Intent(RecentChecks.this,Case1.class);
+                Intent i=new Intent(Case2.this,Case1.class);
                 i.putExtra("timestamp", buttcheeks);
                 i.putExtra("status", oneorzero);
                 i.putExtra("name", array2);
                 startActivity(i);
                 break;
             case 2:
-                Intent in=new Intent(RecentChecks.this,Case1.class);
+                Intent in=new Intent(Case2.this,Case1.class);
                 in.putExtra("timestamp", buttcheeks);
                 in.putExtra("status", oneorzero);
                 in.putExtra("name", array2);
                 startActivity(in);
                 break;
             case 3:
-                Intent it=new Intent(RecentChecks.this,Case3.class);
+                Intent it=new Intent(Case2.this,Case3.class);
                 it.putExtra("timestamp", buttcheeks);
                 it.putExtra("status", oneorzero);
                 it.putExtra("name", array2);
                 startActivity(it);
                 break;
             case 4:
-                Intent a=new Intent(RecentChecks.this,Case4.class);
+                Intent a=new Intent(Case2.this,Case4.class);
                 a.putExtra("timestamp", buttcheeks);
                 a.putExtra("status", oneorzero);
                 a.putExtra("name", array2);
                 startActivity(a);
                 break;
             case 5:
-                Intent s=new Intent(RecentChecks.this,Case5.class);
+                Intent s=new Intent(Case2.this,Case5.class);
                 s.putExtra("timestamp", buttcheeks);
                 s.putExtra("status", oneorzero);
                 s.putExtra("name", array2);
                 startActivity(s);
                 break;
             case 6:
-                Intent intent=new Intent(RecentChecks.this,Case6.class);
+                Intent intent=new Intent(Case2.this,Case6.class);
                 intent.putExtra("timestamp", buttcheeks);
                 intent.putExtra("status", oneorzero);
                 intent.putExtra("name", array2);
